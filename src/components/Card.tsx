@@ -1,17 +1,20 @@
 //import { Fragment } from "react/jsx-runtime";
 // ==> <fragment> </fragment> is used to return multiple elements
+
+import { ReactNode } from "react";
+
 // ==> but we can use <> </> instead of <fragment> </fragment>
 interface CardProps {
-  body: string;
+  children?: ReactNode;
 }
 function Card(props: CardProps) {
   // Desctructuring
-  const { body } = props;
+  const { children } = props;
   //Alternative but not recommended becouse you can´t know if the props is used
   //const body = props.body;
   return (
     <div className="card" style={{ width: "350px" }}>
-      <div className="card-body">{body} </div>
+      <div className="card-body">{children} </div>
     </div>
   );
 }
