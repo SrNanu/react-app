@@ -1,7 +1,20 @@
-import {CardBody, Card} from "./components/Card.tsx";
+import { CardBody, Card } from "./components/Card";
+import List from "./components/List";
 
 function App() {
-  return (<Card><CardBody title="Hola mundo" text="Texto de la carta"/>  </Card>);
+  const list= [
+    'goku',
+    'vegeta',
+    'gohan',
+    'trunks',
+    'piccolo'
+  ];
+  return (
+    <Card>
+      <CardBody title="Hola mundo" text="Texto de la carta" /> 
+      <List data ={list} />
+    </Card>
+  );
 }
 
 export default App;
