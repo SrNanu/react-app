@@ -11,8 +11,9 @@ function App() {
   ];
   return (
     <Card>
-      <CardBody title="Hola mundo" text="Texto de la carta" /> 
-      <List data ={list} />
+      <CardBody title="Hola mundo" text="Texto de la carta" />
+      <List data={list} />
+      <List data={list} />
     </Card>
   );
 }
