@@ -16,7 +16,7 @@ function App() {
     ) : (
       "No hay elementos"
     );
-  const [clicked, setClicked] = useState(false);
+  const [clicked] = useState(false);
 
   // const onClick = () => {
   //   setClicked(true);
