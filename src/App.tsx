@@ -5,27 +5,39 @@ import { useState } from "react";
 
 function App() {
   const list = ["goku", "vegeta", "gohan", "trunks", "piccolo"];
+  const [listState,setListState] = useState(list);
+
   const handleSelect = (element: string) => {
     console.log("imprimiendo ", element);
   };
-  const contenido = 
+  const contenido =
     list.length > 0 ? (
-      <List data={list} onselect={handleSelect} />
+      <List data={listState} onselect={handleSelect} />
     ) : (
       "No hay elementos"
     );
   const [clicked, setClicked] = useState(false);
 
-  const onClick = () => {
-    setClicked(true);
+  // const onClick = () => {
+  //   setClicked(true);
+  // };
+  const addMinion = () => {
+    setListState([...listState,"Minion"]);  
+  };
+
+  const delMinion = () => {
+    setListState(listState.slice(0,-1));
   };
   return (
     <Card>
+      <Button clicked={clicked} onClick={addMinion}>
+        Agregar
+      </Button>
+      <Button clicked={clicked} onClick={delMinion}>
+        Eliminar
+      </Button>
       <CardBody title="Hola mundo" text="Texto de la carta" />
       {contenido}
-      <Button clicked={clicked} onClick={onClick}>
-        Hola mundo
-      </Button>
     </Card>
   );
 }
