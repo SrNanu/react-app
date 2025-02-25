@@ -1,13 +1,12 @@
 import { CardBody, Card } from "./components/Card";
 import List from "./components/List";
+import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
   const list = ["goku", "vegeta", "gohan", "trunks", "piccolo"];
   const handleSelect = (element: string) => {
     console.log("imprimiendo ", element);
-  };
-  const handleSelect2 = (element: string) => {
-    console.log("Mostrando ", element);
   };
   const contenido = 
     list.length > 0 ? (
@@ -15,11 +14,18 @@ function App() {
     ) : (
       "No hay elementos"
     );
+  const [clicked, setClicked] = useState(false);
 
+  const onClick = () => {
+    setClicked(true);
+  };
   return (
     <Card>
       <CardBody title="Hola mundo" text="Texto de la carta" />
       {contenido}
+      <Button clicked={clicked} onClick={onClick}>
+        Hola mundo
+      </Button>
     </Card>
   );
 }
